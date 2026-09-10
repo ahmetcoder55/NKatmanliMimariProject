@@ -43,10 +43,10 @@ namespace DataAccess.Concrete
             return entity;
         }
 
-        public IQueryable<TEntity> GetByQuery(Expression<Func<TEntity, bool>> expression)
+        public async Task<List<TEntity>> GetByQueryAsync(Expression<Func<TEntity, bool>> expression)
         {
             var query = _context.Set<TEntity>().Where(expression);
-            return query;
+            return await query.ToListAsync();
         }
 
         public void Update(TEntity entity)

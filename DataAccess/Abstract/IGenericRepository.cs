@@ -10,7 +10,7 @@ namespace DataAccess.Abstract
     {
         Task<IEnumerable<T>> GetAllAsync();
 
-        IQueryable<T> GetByQuery(Expression<Func<T,bool>>expression);
+        Task<List<T>> GetByQueryAsync(Expression<Func<T,bool>>expression);
 
         Task<T> GetByIdAsync(int id);
 
