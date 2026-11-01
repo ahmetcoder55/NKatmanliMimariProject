@@ -1,1 +1,2 @@
 # NKatmanliMimariProject
+Generic Repository
